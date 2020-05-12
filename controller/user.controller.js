@@ -59,7 +59,8 @@ module.exports.postUpdate =async function(req, res) {
     }
    var user = await Users.findOne({_id:id})
     cloudinary.uploader.upload(data.image, function(error, result) {
-    user.avatarUrl= result.url 
+    user.avatarUrl= result.url;
+    user.save();
     res.redirect("/users");
   });
 

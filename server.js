@@ -50,9 +50,9 @@ app.get("/",function(req, res) {
   res.render("index.pug");
 });
 app.use('/auth',authRoute);
-app.use('/users',authMiddleware.login,userRoute);
-app.use('/books',sessionMiddleware,bookRoute);
-app.use("/transactions",authMiddleware.login,adminMiddleware.admin, transactionRoute);
+app.use('/users',userRoute);
+app.use('/books',bookRoute);
+app.use("/transactions", transactionRoute);
 
 app.use(function(err, req, res, next) {
   res.status(500)

@@ -1,0 +1,17 @@
+extend ../layout/layout1
+block content
+  h1 Books
+  a.badge.badge-primary.mb-3(href="/books/create") Create
+  table.table.table-dark
+    tr
+      th Title book
+      th Description book
+      th Action
+    each book in books
+      tr
+        td
+          img(src=book.coverUrl width="40" height="40")
+        td=book.title
+        td=book.description
+        td
+          a.badge.badge-primary(href="/cart/add/"+book._id) Add to cart

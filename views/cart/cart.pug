@@ -1,0 +1,13 @@
+extend ../layout/layout1
+block content
+    h1 Cart
+    table.table.table-dark
+        tr
+            th Title book
+            th Amount
+        each book in books
+            tr
+                td= book.title
+                td=cart[book.id]
+    form(method="post")
+        button.btn.btn-primary Rent

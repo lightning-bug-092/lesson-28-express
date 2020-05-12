@@ -12,8 +12,6 @@ cloudinary.config({
 
 module.exports.index = async function(req, res,next) {
   try{
-  var a;
-  a.b();
   var users = await Users.find();
   res.render("./users/users.pug", {
     users: users
